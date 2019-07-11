@@ -49,37 +49,37 @@ data class User(
             return this
         }
 
-        fun fistName(firstName: String): UserBuilder {
+        fun setFistName(firstName: String): UserBuilder {
             this.firstName = firstName
             return this
         }
 
-        fun lastName(lastName: String): UserBuilder {
+        fun setLastName(lastName: String): UserBuilder {
             this.lastName = lastName
             return this
         }
 
-        fun avatar(avatar:String):UserBuilder{
+        fun setAvatar(avatar:String):UserBuilder{
             this.avatar = avatar
             return this
         }
 
-        fun rating(rating: Int): UserBuilder {
+        fun setRating(rating: Int): UserBuilder {
             this.rating = rating
             return this
         }
 
-        fun respect(respect: Int): UserBuilder {
+        fun setRespect(respect: Int): UserBuilder {
             this.respect = respect
             return this
         }
 
-        fun lastVisit(lastVisit: Date): UserBuilder {
+        fun setLastVisit(lastVisit: Date): UserBuilder {
             this.lastVisit = lastVisit
             return this
         }
 
-        fun isOnline(isOnline : Boolean) : UserBuilder{
+        fun setIsOnline(isOnline : Boolean) : UserBuilder{
             this.isOnline = isOnline
             return this
         }
