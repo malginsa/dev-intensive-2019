@@ -30,8 +30,27 @@ class DateTest {
         assertEquals(999_654_400_000, add.time)
     }
 
-//    @Test
-//    fun timeUnits_seconds(){
-//        TimeUnits.SECOND.plural(1)
-//    }
+    @Test
+    fun timeUnits_second(){
+        val plural = TimeUnits.SECOND.plural(1)
+        assertEquals("1 секунду", plural)
+    }
+
+    @Test
+    fun timeUnits_minute(){
+        val plural = TimeUnits.MINUTE.plural(4)
+        assertEquals("4 минуты", plural)
+    }
+
+    @Test
+    fun timeUnits_hour(){
+        val plural = TimeUnits.HOUR.plural(19)
+        assertEquals("19 часов", plural)
+    }
+
+    @Test
+    fun timeUnits_day(){
+        val plural = TimeUnits.DAY.plural(222)
+        assertEquals("222 дня", plural)
+    }
 }

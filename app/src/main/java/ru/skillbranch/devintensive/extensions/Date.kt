@@ -32,5 +32,33 @@ enum class TimeUnits {
     SECOND,
     MINUTE,
     HOUR,
-    DAY
+    DAY;
+
+    fun plural(value: Int): String {
+        val normalized = if (value>20) value%10 else value
+        var result = "$value "
+        result += when (this) {
+            SECOND -> when(normalized) {
+                1 -> "секунду"
+                in 2..4 -> "секунды"
+                else -> "секунд"
+            }
+            MINUTE -> when(normalized) {
+                1 -> "минуту"
+                in 2..4 -> "минуты"
+                else -> "минут"
+            }
+            HOUR -> when(normalized) {
+                1 -> "час"
+                in 2..4 -> "часа"
+                else -> "часов"
+            }
+            DAY -> when(normalized) {
+                1 -> "день"
+                in 2..4 -> "дня"
+                else -> "дней"
+            }
+        }
+        return result
+    }
 }
