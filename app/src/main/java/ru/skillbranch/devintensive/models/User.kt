@@ -35,14 +35,14 @@ data class User(
 
     class UserBuilder {
 
-        private lateinit var lastName: String
-        private lateinit var firstName: String
-        private lateinit var id: String
-        private lateinit var avatar: String
-        private var rating : Int = 0
-        private var respect : Int = 0
-        private lateinit var lastVisit : Date
-        private var isOnline : Boolean = false
+        lateinit var lastName: String
+        lateinit var firstName: String
+        lateinit var id: String
+        lateinit var avatar: String
+        var rating : Int = 0
+        var respect : Int = 0
+        lateinit var lastVisit : Date
+        var isOnline : Boolean = false
 
         fun id(id: String): UserBuilder {
             this.id = id
