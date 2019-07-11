@@ -11,7 +11,7 @@ class DateTest {
 
     @Test
     fun format_full(){
-        assertEquals("05:46:40 09:09:01", date.format())
+        assertEquals("05:46:40 09.09.01", date.format())
     }
 
     @Test

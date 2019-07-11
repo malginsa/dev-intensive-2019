@@ -27,7 +27,7 @@ fun Date.humanizeDiff(compareTo: Date = Date()): String {
     return if (isInThePast) result + " назад" else "через " + result
 }
 
-fun Date.format(pattern: String = "HH:mm:ss dd:MM:yy"): String {
+fun Date.format(pattern: String = "HH:mm:ss dd.MM.yy"): String {
     return SimpleDateFormat(pattern, Locale("ru")).format(time)
 }
 
