@@ -13,8 +13,6 @@ data class User(
     val lastVisit: Date? = null,
     val isOnline: Boolean = false
 ) {
-    constructor() : this("-1", null, null)
-
     companion object Factory {
         private var lastId: Int = -1
         fun makeUser(fullName: String?): User {
@@ -27,66 +25,28 @@ data class User(
             )
         }
 
-        fun Builder(): UserBuilder {
-            return UserBuilder()
-        }
-
     }
 
-    class UserBuilder {
+    data class Builder(
+        var id: String = "-1",
+        var firstName: String? = null,
+        var lastName: String? = null,
+        var avatar: String? = null,
+        var rating: Int = 0,
+        var respect: Int = 0,
+        var lastVisit: Date? = null,
+        var isOnline: Boolean = false
+    ) {
+        fun id(id: String) = apply { this.id = id }
+        fun firstName(firstName: String) = apply { this.firstName = firstName }
+        fun lastName(lastName: String) = apply { this.lastName = lastName }
+        fun avatar(avatar: String) = apply { this.avatar = avatar }
+        fun rating(rating: Int) = apply { this.rating = rating }
+        fun respect(respect: Int) = apply { this.respect = respect }
+        fun lastVisit(lastVisit: Date) = apply { this.lastVisit = lastVisit }
+        fun isOnline(isOnline: Boolean) = apply { this.isOnline = isOnline }
 
-        lateinit var lastName: String
-        lateinit var firstName: String
-        lateinit var id: String
-        lateinit var avatar: String
-        var rating : Int = 0
-        var respect : Int = 0
-        lateinit var lastVisit : Date
-        var isOnline : Boolean = false
-
-        fun id(id: String): UserBuilder {
-            this.id = id
-            return this
-        }
-
-        fun setFistName(firstName: String): UserBuilder {
-            this.firstName = firstName
-            return this
-        }
-
-        fun setLastName(lastName: String): UserBuilder {
-            this.lastName = lastName
-            return this
-        }
-
-        fun setAvatar(avatar:String):UserBuilder{
-            this.avatar = avatar
-            return this
-        }
-
-        fun setRating(rating: Int): UserBuilder {
-            this.rating = rating
-            return this
-        }
-
-        fun setRespect(respect: Int): UserBuilder {
-            this.respect = respect
-            return this
-        }
-
-        fun setLastVisit(lastVisit: Date): UserBuilder {
-            this.lastVisit = lastVisit
-            return this
-        }
-
-        fun setIsOnline(isOnline : Boolean) : UserBuilder{
-            this.isOnline = isOnline
-            return this
-        }
-
-        fun build(): User {
-            return User(id, firstName, lastName, avatar, rating, respect, lastVisit, isOnline)
-        }
+        fun build() = User(id, firstName, lastName, avatar, rating, respect, lastVisit, isOnline)
     }
 }
 
