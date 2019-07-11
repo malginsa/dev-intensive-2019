@@ -15,25 +15,9 @@ object Utils {
     }
 
     fun toInitials(firstName : String?, lastName : String?) : String?{
-//        var result : String? = null
-//        val firstInitial: String?
-//        if(!firstName.isNullOrBlank()) firstInitial = firstName.get(0).toUpperCase()
-
-        var dirty = "" + firstName?.getOrNull(0)?.toUpperCase() + lastName?.getOrNull(0)?.toUpperCase()
-
-        dirty = dirty.replace("null", "")
-
-        return if (dirty.isBlank()) null else dirty
-//
-//        val firstInitial = firstName?.get(0)?.toUpperCase()
-//        val lastInitial = lastName?.get(0)?.toUpperCase()
-//
-//        if (firstInitial == null && lastInitial == null) return null
-//
-//        var result:String? = null
-//        if (firstInitial != null) result = "$firstInitial"
-////        if (lastInitial != null) result += "$lastInitial"
-//        return result
+        var result = "" + firstName?.getOrNull(0)?.toUpperCase() + lastName?.getOrNull(0)?.toUpperCase()
+        result = result.replace("null", "")
+        return if (result.isBlank()) null else result
     }
 
     fun transliteration(payload : String?, divider : String? = " ") : String?{
