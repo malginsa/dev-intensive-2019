@@ -18,7 +18,7 @@ class BaseMessageTest {
     @Test
     fun imageMessage(){
         val message = BaseMessage.makeMessage(user, Chat("0"),
-            Date().add(-2, TimeUnits.HOUR), "https://anyurl.com", "image", true)
+            Date().add(-2, TimeUnits.HOUR), "https://anyurl.com", "image")
         println(message.formatMessage())
     }
 }
