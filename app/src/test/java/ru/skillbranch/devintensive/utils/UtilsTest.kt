@@ -60,13 +60,13 @@ class UtilsTest {
 
     @Test
     fun transliterations_fullNameWithoutDivider(){
-        val transliterations = Utils.transliterations("Женя Стереотипов")
+        val transliterations = Utils.transliteration("Женя Стереотипов")
         assertEquals("Zhenya Stereotipov", transliterations)
     }
 
     @Test
     fun transliterations_fullNameWithDivider(){
-        val transliterations = Utils.transliterations("Amazing Петр", "_")
+        val transliterations = Utils.transliteration("Amazing Петр", "_")
         assertEquals("Amazing_Petr", transliterations)
     }
 }
