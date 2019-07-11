@@ -24,7 +24,6 @@ data class User(
                 lastName
             )
         }
-
     }
 
     data class Builder(
@@ -49,4 +48,3 @@ data class User(
         fun build() = User(id, firstName, lastName, avatar, rating, respect, lastVisit, isOnline)
     }
 }
-

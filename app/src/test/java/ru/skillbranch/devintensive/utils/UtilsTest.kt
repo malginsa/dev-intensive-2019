@@ -47,14 +47,26 @@ class UtilsTest {
     }
 
     @Test
+    fun toInitials_lastName(){
+        val initials = Utils.toInitials(null, "Doe")
+        assertEquals("D", initials)
+    }
+
+    @Test
     fun toInitials_null(){
         val initials = Utils.toInitials(null, null)
         assertNull(initials)
     }
 
     @Test
-    fun toInitials_empty(){
+    fun toInitials_emptyFirstName(){
         val initials = Utils.toInitials(" ", "")
+        assertNull(initials)
+    }
+
+    @Test
+    fun toInitials_emptyLastName(){
+        val initials = Utils.toInitials("", " ")
         assertNull(initials)
     }
 
